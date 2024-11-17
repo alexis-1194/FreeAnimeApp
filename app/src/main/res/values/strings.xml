@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JikanApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo">MyAnimeList</string>
+    <string name="placeholder_buscar">buscar</string>
+    <string name="boton_buscar">buscar</string>
+    <string name="encabezado_principal">Mas populares</string>
+    <string name="episodios">Episodios</string>
+</resources>

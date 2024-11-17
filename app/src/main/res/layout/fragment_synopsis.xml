@@ -1,0 +1,110 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ScrollView para manejar sinopsis largas -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.view.fragment.SynopsisFragment">
+
+            <!-- Título Sinopsis -->
+            <TextView
+                android:id="@+id/titleSinopsis_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sinopsis"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Contenido de la sinopsis -->
+            <TextView
+                android:id="@+id/sinopsis_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleSinopsis_text"
+                android:text="Aquí va la sinopsis del anime..."
+                android:textSize="18dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/conrete"
+                tools:text="Sinopsis del anime..."
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Separador visual -->
+            <View
+                android:id="@+id/separador2_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/sinopsis_text"
+                android:background="@color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Fecha de inicio -->
+            <TextView
+                android:id="@+id/startDate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separador2_view"
+                android:text="Fecha de inicio"
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/startDate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startDate_title"
+                android:textColor="@color/conrete"
+                android:textSize="18dp"
+                tools:text="2007-02-15"/>
+
+            <!-- Fecha de finalización -->
+            <TextView
+                android:id="@+id/endDate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/startDate_text"
+                android:text="Fecha de finalización"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/endDate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/endDate_title"
+                android:textColor="@color/conrete"
+                android:textSize="18dp"
+                tools:text="2008-03-30"/>
+
+            <!-- Tipo de Anime -->
+            <TextView
+                android:id="@+id/type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/endDate_text"
+                android:text="Tipo"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/type_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/type_title"
+                android:textColor="@color/conrete"
+                android:textSize="18dp"
+                tools:text="Serie" />
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

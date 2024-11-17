@@ -1,0 +1,115 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGray"
+        android:padding="16dp"
+        tools:context=".ui.view.MainActivity">
+
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/title_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/titulo"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- EditText de búsqueda -->
+        <EditText
+            android:id="@+id/buscar_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/primaryColor"
+            android:elevation="4dp"
+            android:hint="@string/placeholder_buscar"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_txt" />
+
+        <!-- Botón de búsqueda con animación(pendiente) -->
+        <!--        android:stateListAnimator="@anim/button_anim"-->
+        <Button
+            android:id="@+id/buscar_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/primaryDark"
+            android:elevation="6dp"
+            android:text="@string/boton_buscar"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buscar_edit" />
+
+        <!-- Encabezado de sección -->
+        <TextView
+            android:id="@+id/populares_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center_horizontal"
+            android:text="@string/encabezado_principal"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buscar_btn" />
+
+
+<!--        &lt;!&ndash;         Contenedor del Fragment &ndash;&gt;-->
+<!--        <com.google.android.exoplayer2.ui.PlayerView-->
+<!--            android:id="@+id/player_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+
+<!--        <VideoView-->
+<!--            android:id="@+id/player_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </VideoView>-->
+
+
+        <FrameLayout
+            android:id="@+id/container_fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:transitionName="fade_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/populares_txt"
+            android:visibility="gone"/>
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/populares_txt"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

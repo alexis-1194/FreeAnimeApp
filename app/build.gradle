@@ -1,0 +1,137 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' // Necesario para usar Hilt
+    id 'com.google.dagger.hilt.android' version "2.52"// El plugin de Hilt se incluye aquí
+    id 'kotlin-parcelize'
+    id("org.jetbrains.dokka") version "1.9.20"
+
+}
+
+android {
+    namespace 'com.example.jikanapp'
+    compileSdk 34
+
+    buildscript {
+        ext {
+            hilt_version = '2.52'
+        }
+        repositories {
+            google() // Asegúrate de que este repositorio esté presente
+            mavenCentral()
+        }
+        dependencies {
+//            classpath 'com.android.tools.build:gradle:8.6.1'
+            classpath 'com.android.tools.build:gradle:8.6.1'
+//            classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.example.jikanapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enable true
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.activity:activity:1.9.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    // Retrofit para consumir la API
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // StateFlow y ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
+
+    // Coil para cargar imágenes
+    implementation 'io.coil-kt:coil:1.4.0'
+
+    // Animación de Slider, efecto deslizante ViewPager
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
+
+    // Datetime para uso de fechas, Asegúrate de usar la última versión
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
+
+    // Dagger Hilt para inyección de dependencias
+    implementation "com.google.dagger:hilt-android:2.52"
+    kapt "com.google.dagger:hilt-compiler:2.52"
+//    kapt "androidx.hilt:hilt-compiler:1.2.0" //Versión deprecada
+
+    // Room
+//    implementation "androidx.room:room-runtime:2.6.1"
+//    kapt "androidx.room:room-compiler:2.6.1"
+
+    // Dependencias para usar la FUNCIÓN by viewModels() en Fragments o Activities
+    implementation "androidx.fragment:fragment-ktx:1.8.4"
+    implementation "androidx.activity:activity-ktx:1.9.2"
+
+    // Giphy
+    implementation 'com.giphy.sdk:ui:2.3.15'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // YouTube Player by Pierfrancesco Soffritti
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0'
+
+    // Dokka
+//    implementation "org.jetbrains.dokka:android-documentation-plugin:1.7.20"
+
+    // Exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.19.1' // O la última versión disponible
+
+    //
+    implementation("org.jsoup:jsoup:1.16.1") // Asegúrate de tener la última versión
+}
+
+hilt {
+    enableAggregatingTask = false
+}
+
+
+
